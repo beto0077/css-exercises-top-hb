@@ -89,3 +89,139 @@
   font-size: 13px;
   font-weight: normal;
 }
+
+/* structural layout of the grid - COMPLETELY BLIND SOLUTION */
+/* html,
+body {
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 2fr 1fr 12fr 1fr;
+  grid-template-columns: 1fr 4fr;
+  gap: 4px;
+}
+
+.header {
+  grid-area: 1 / 1 / 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+
+  .logo {
+    justify-self: start;
+  }
+
+  .menu ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: end;
+  }
+}
+
+.sidebar {
+  grid-area: 2 / 1 / 4 / 2;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 50px;
+
+  .side-content {
+    display: grid;
+    place-items: center;
+  }
+}
+
+.nav {
+  grid-area: 2 / 2 / 3 / 3;
+
+  ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.article {
+  grid-area: 3 / 2 / 4 / 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+
+  .card {
+    height: 200px;
+  }
+}
+
+.footer {
+  grid-area: 4 / 1 / 5 / 3;
+} */
+
+
+/* structural layout of the grid - SOLUTION AFTER COMPARING MY SOLUTION WITH THE ONE GIVEN IN THE EXERCISE */
+/*I feel obliged to clarify, as this is not the first time this has happened to me, that it seems totally counterproductive to me that the modules explain the topics in such a superficial way without going into detail, and then leaving said "in-depth" explanation to reading articles external to the course, and then leaving exercises like these where the solution requires knowing very specific details, which would have cost nothing to explain or mention directly in the course, is sending you to take unnecessary extra steps, only to then realize that the solution could be simpler than you expected, and that lost time could have been spent advancing further in the course or going deeper into other topics that have been left very ambiguous throughout the course.*/
+/*I mention this because the solution would have been easier to develop or implement if the course had mentioned that grids can be created and sorted from beginning to end without having to explicitly define their rows. All the explanations given in the course include examples of creating grids with fixed or flexible references to rows and columns, but always present in text. If at least one of the examples had mentioned the detail of being able to create a grid and expand its row extension without having to explicitly define them in its parent container, I wouldn't have wasted so much time working on the solution to this exercise.*/
+/*And mentioning this detail about how to create a grid from scratch just by defining the columns doesn't take away from the educational value of the exercise or make it less difficult, but as I said before, it saves the student time and helps them focus on providing a more precise or creative solution.*/
+/*But of course, it's easier to provide simple explanations in the course, then "supplement" the lesson with external sources and make them required reading, whether or not you fully understand what's being explained and how it's explained in those external sources. Only to then top it off with exercises that far exceed the average difficulty given in the course explanation, and give a solution that seems more like a statement of "flexing" skills by the person who posed the exercise and then provided the solution. Great methodology to keep you motivated as a student.*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 4px;
+}
+
+.header {
+  grid-area: 1 / 1 / 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+
+  .logo {
+    justify-self: start;
+  }
+
+  .menu ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: end;
+  }
+}
+
+.sidebar {
+  grid-area: 2 / 1 / 4 / 2;
+  display: grid;
+  gap: 50px;
+
+  .photo,
+  .side-content {
+    display: grid;
+    place-items: center;
+  }
+}
+
+.nav {
+  grid-area: 2 / 2 / 3 / 3;
+
+  ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.article {
+  grid-area: 3 / 2 / 4 / 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+
+  .card {
+    height: 200px;
+  }
+}
+
+.footer {
+  grid-area: 4 / 1 / 5 / 3;
+}
